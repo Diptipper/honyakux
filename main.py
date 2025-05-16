@@ -19,7 +19,9 @@ def main():
         print()
 
         slow_print(" Translate this sentence:\n" + word_wrap(line))
+        print()
 
+        print(f" Waiting for {model} to respond...")
         # =================================================================
         
         prompt = f"""
@@ -38,7 +40,6 @@ def main():
         print()
 
         slow_print(f" {model}'s translation:\n" + word_wrap(result))
-        print()
 
         answer = input("\n Type 'exit' to stop,\n or anything else to continue: ").strip()
         print()
@@ -49,8 +50,13 @@ def main():
             print("-"*64)
 
 def fetch_web():
-    # Path to the folder containing .dat files
-    folder_path = os.path.join(os.path.dirname(__file__), 'novel_data')
+    # Safe base path even if __file__ is undefined (e.g., in some IDEs or interactive shells)
+    try:
+        base_path = os.path.dirname(os.path.abspath(__file__))
+    except NameError:
+        base_path = os.getcwd()
+
+    folder_path = os.path.join(base_path, 'novel_data')
 
     # Get all .dat files in the folder
     dat_files = [f for f in os.listdir(folder_path) if f.endswith('.dat')]
@@ -66,7 +72,7 @@ def fetch_web():
     # Read the number n from the file
     file_path = os.path.join(folder_path, chosen_file)
     try:
-        with open(file_path, 'r') as f:
+        with open(file_path, 'r', encoding='utf-8') as f:
             n = int(f.read().strip())
     except ValueError:
         print(f"Invalid number in file: {chosen_file}")
@@ -85,7 +91,7 @@ def fetch_web():
         if response.status_code == 200:
             # Chapter n+1 exists; update the file
             n += 1
-            with open(file_path, 'w') as f:
+            with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(str(n))
     except requests.exceptions.RequestException:
         pass  # If the request fails, just continue with existing `n`
