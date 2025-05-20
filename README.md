@@ -27,10 +27,10 @@ Designed to run on Linux systems. Windows system might also work.
 ```
 4. Make sure you install MeCab and add the correct path to the system. To find the path, enter this in the terminal
 ```
-	% find /opt/homebrew -name mecabrc
- 	<some paths should appear>
+	find /opt/homebrew -name mecabrc # for Mac
+	find / -name mecabrc 2>/dev/null # for Linux
 ```
-Then add the following command to beginning of `translatex.sh`
+Then you will get some path to mecabrc. Then add the following command to beginning of `translatex.sh`
 ```
 	export MECABRC=<path without quotation>
 ```
