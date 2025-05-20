@@ -11,6 +11,7 @@ Requirements:
  	* "googletrans==4.0.0-rc1" package 
  	* "pykakasi" package 
 * ollama (+ model you want to use such as llama3)
+* MeCab
 
 To modify the novel database, add another file <novel_id>.dat in novel_data folder. Inside the file, enter the number of chapters. You don't have to come back and update the number of chapters every time. The program try to check if there's more chapter automatically.
 
