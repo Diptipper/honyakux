@@ -1,1 +1,1 @@
-clear; clear; python3 /Users/ayosp/Desktop/Coding/honyakux/main.py
+clear; clear; python3 <global_path_to_this_folder>/honyakux/main.py
