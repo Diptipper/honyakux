@@ -9,15 +9,25 @@ Requirements:
 * Python
 	* "requests" package
  	* "googletrans==4.0.0-rc1" package 
- 	* "pykakasi" package 
+ 	* "pykakasi" package [If you are going to use `translate`]
+ 	* "MeCab" package [If you are going to use `translate`]
 * ollama (+ model you want to use such as llama3)
-* MeCab
+* MeCab [If you are going to use `translate`]
 
 To modify the novel database, add another file <novel_id>.dat in novel_data folder. Inside the file, enter the number of chapters. You don't have to come back and update the number of chapters every time. The program try to check if there's more chapter automatically.
-
-Note: you can run this anywhere
 
 Also, run the following commands to run `honyakux` and `translate` anywhere:
 
 	sudo ln -s /Users/<your_user_name>/Desktop/.../honyakux/honyakux.sh /usr/local/bin/honyakux
 	sudo ln -s /Users/<your_user_name>/Desktop/.../honyakux/translate.sh /usr/local/bin/translate
+
+You have to add the permission to use the shell script first (go to the folder and run `chmod +x ./honyakux.sh` and `chmod +x ./translate.sh`).
+
+Also, make sure you install MeCab and add the correct path to the system. To find the path, enter this in the terminal
+
+	% find /opt/homebrew -name mecabrc
+ 	<some paths should appear>
+  
+add the following command to beginning of `translate.sh`
+
+	export MECABRC=<path without quotation>
