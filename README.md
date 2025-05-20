@@ -6,6 +6,7 @@ A very simple python script that fetches a random sentence from syosetu (you can
 Designed to run on Linux systems. Windows system might also work.
 
 ## Installation
+It's not convenient and you probably have to debug a lot but here's the instruction I did that worked for me:
 1. install the following requirements:
 	* Python
 		* "requests" package
