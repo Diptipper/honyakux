@@ -21,8 +21,8 @@ Designed to run on Linux systems. Windows system might also work.
 ```
  	chmod +x ./honyakux.sh
 	chmod +x ./translate.sh
-	sudo ln -s /Users/.../honyakux/honyakux.sh /usr/local/bin/honyakux
-	sudo ln -s /Users/.../honyakux/translate.sh /usr/local/bin/translate
+	sudo ln -s <global_path>/honyakux/honyakux.sh /usr/local/bin/honyakux
+	sudo ln -s <global_path>/honyakux/translate.sh /usr/local/bin/translatex
 ```
 4. Make sure you install MeCab and add the correct path to the system. To find the path, enter this in the terminal
 ```
