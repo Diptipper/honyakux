@@ -1,0 +1,1 @@
+clear; clear; python3 /Users/ayosp/Desktop/Coding/honyakux/google_translate.py

@@ -1,0 +1,1 @@
+clear; clear; python3 /Users/ayosp/Desktop/Coding/honyakux/main.py

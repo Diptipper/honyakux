@@ -4,10 +4,8 @@ import time
 import random
 import requests
 import subprocess
-from googletrans import Translator
 
 model = "llama3"
-translator = Translator()
 
 def main():
 
@@ -38,21 +36,15 @@ def main():
         This is for my translation practice.
         Your answer:
         """
-        result1, _ = ask(prompt)
-        result2 = translator.translate(line, dest="en").text
+        result, _ = ask(prompt)
         
         # =================================================================
         
         answer = input("\n Press ENTER to see the translation...").strip()
         print()
 
-        slow_print(f" translation:\n" + word_wrap(
-            f"[{model}]\n"+result1
-            +f"\n\n[google]\n"+result2
-            ))
+        slow_print(f" {model}'s translation:\n" + word_wrap(result))
 
-        # =================================================================
-        
         answer = input("\n Type 'exit' to stop,\n or anything else to continue: ").strip()
         print()
 
