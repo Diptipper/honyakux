@@ -17,21 +17,22 @@ Designed to run on Linux systems. Windows system might also work.
 	* Git
   
 2. Clone this repo to your local folder: `git clone github.com/Diptipper/honyakux`
-3. Go to the folder `honyaku` and run the following commands (replace ... by your global path to the folder):
+3. Edit `honyakux.sh` and `translatex.sh` by replacing `<path_to_this_folder>` by the path to this folder.
+4. Go to the folder `honyaku` and run the following commands (replace ... by your global path to the folder):
 ```
  	chmod +x ./honyakux.sh
-	chmod +x ./translate.sh
+	chmod +x ./translatex.sh
 	sudo ln -s <global_path>/honyakux/honyakux.sh /usr/local/bin/honyakux
-	sudo ln -s <global_path>/honyakux/translate.sh /usr/local/bin/translatex
+	sudo ln -s <global_path>/honyakux/translatex.sh /usr/local/bin/translatex
 ```
 4. Make sure you install MeCab and add the correct path to the system. To find the path, enter this in the terminal
 ```
 	% find /opt/homebrew -name mecabrc
  	<some paths should appear>
 ```
-Then add the following command to beginning of `translate.sh`
+Then add the following command to beginning of `translatex.sh`
 ```
 	export MECABRC=<path without quotation>
 ```
 5. To modify the novel database, add another file <novel_id>.dat in novel_data folder. Inside the file, enter the number of chapters. You don't have to come back and update the number of chapters every time. The program try to check if there's more chapter automatically.
-6. Now you can use `honyakux` and `translate` module anywhere.
+6. Now you can use `honyakux` and `translatex` module anywhere.
