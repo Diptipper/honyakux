@@ -11,8 +11,7 @@ To modify the novel database, add another file <novel_id>.dat in novel_data fold
 
 Note: you can run this anywhere
 
-sudo ln -s /Users/<your_user_name>/Desktop/<directory_to_your_shell_script>.sh /usr/local/bin/<command_name>
+Also, run the following commands to run `honyakux` and `translate` anywhere:
 
-	sudo ln -s /Users/<your_user_name>/Desktop/<directory_to_your_shell_script>.sh /usr/local/bin/<command_name>
-
-sudo ln -s /Users/ayosp/Desktop/Coding/honyakux/translate.sh /usr/local/bin/translate
+	sudo ln -s /Users/<your_user_name>/Desktop/.../honyakux/honyakux.sh /usr/local/bin/honyakux
+	sudo ln -s /Users/<your_user_name>/Desktop/.../honyakux/translate.sh /usr/local/bin/translate
